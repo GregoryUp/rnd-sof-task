@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <h1 class="text-center mb-5">Новости</h1>
+  <div id="news" class="row justify-content-center">
+    <% @news.each do |news| %>
+      <%= render news %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<%= form_with(model: news) do |form| %>
+  <% if news.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(news.errors.count, "error") %> запретил сохранение этой новости:</h2>
+
+      <ul>
+        <% news.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, "Заголовок", class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content, "Содержание", class: "form-label" %>
+    <%= form.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="">
+    <p>Осталось редактирований: <%= @edited_times.to_s %></p>
+  </div>
+  
+  <%= form.submit "Готово", class: "btn btn-primary" %>
+<% end %>

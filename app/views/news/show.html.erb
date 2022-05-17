@@ -1,0 +1,16 @@
+<div class="container">
+  <p style="color: <%= notice["color"] %>"><%= notice["text"] %></p>
+
+  <h1 class="text-center mb-5"><%= @news.title %></h1>
+
+  <%= render 'show', news: @news %>
+
+  <% if can? :manage, @news %>
+  <div>
+    <%= link_to "Отредактировать", edit_news_path(@news) %> |
+    <%= link_to "Вернуться", news_index_path %>
+
+    <%= button_to "Удалить", @news, method: :delete, class: "btn btn-danger" %>
+  </div>
+  <% end %>
+</div>

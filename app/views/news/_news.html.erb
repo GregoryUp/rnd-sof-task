@@ -1,0 +1,12 @@
+<div class="col-12 col-sm-6 col-md-4" style="min-height: 260px" id="<%= dom_id news %>">
+  <div class="card h-100" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= news.title %></h5>
+      <p class="card-text"><%= truncate news.content, length: 100 %></p>
+    </div>
+    <div class="card-footer">
+      <%= link_to "Посмотреть", news %>
+    </div>
+  </div>
+</div>
+
